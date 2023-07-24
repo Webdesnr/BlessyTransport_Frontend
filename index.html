@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blessy Carriers</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <nav class="navbar collapsible">
+      <a class="nav-logo" href="/">LOGO</a>
+      <svg class="collapsible-icon nav-toggler">
+        <use xlink:href="images/sprite.svg#navIcon"></use>
+      </svg>
+      <ul class="list nav-list collapsible-content">
+        <li class="nav__item"><a href="#home">HOME</a></li>
+        <li class="nav__item"><a href="#service">SERVICES</a></li>
+        <li class="nav__item"><a href="#hire">HIRE</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="home" class="container grid grid--1x2 home-page">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              images/hero-banner/hero-banner.webp    1x,
+              images/hero-banner/hero-banner@2x.webp 2x
+            "
+          />
+          <source
+            type="image/png"
+            srcset="
+              images/hero-banner/hero-banner.png    1x,
+              images/hero-banner/hero-banner@2x.png 2x
+            "
+          />
+          <img
+            class="hero-image"
+            src="./images/hero-banner/hero-banner.png"
+            alt=""
+          />
+        </picture>
+        <div class="hero-content">
+          <h1 class="hero--h1">BlessyCarriers</h1>
+          <h2 class="hero--h2">
+            Let us take away the hassle of relocation and make your move a
+            breeze
+          </h2>
+          <a class="btn btn--primary hero--button" href="#">BOOK NOW</a>
+        </div>
+      </section>
+      <section id="service" class="container service-page">
+        <header class="service-header">
+          <h1 class="heading underline">SERVICES</h1>
+        </header>
+        <div class="grid grid--1x2 grid--1x3 cards">
+          <div class="card">
+            <div class="card__content">
+              <div class="card__image">
+                <img src="./images/packing_items.svg" alt="" />
+              </div>
+              <h2 class="card__heading">PACKERS AND MOVERS</h2>
+              <a href="#" class="btn btn--accent card__btn">HIRE NOW</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__content">
+              <div class="card__image">
+                <img src="./images/actingDriver.svg" alt="" />
+              </div>
+              <h2 class="card__heading">ACTING DRIVER</h2>
+              <a href="#" class="btn btn--accent card__btn">HIRE NOW</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__content">
+              <div class="card__image">
+                <img src="./images/labourService.svg" alt="" />
+              </div>
+              <h2 class="card__heading">LABOUR SERVICE</h2>
+              <a class="btn btn--accent t card__btn" href="#">HIRE NOW</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="hire" class="container hire-page">
+        <img class="hire__banner" src="images/hire_banner.png" alt="" />
+        <div class="hire__form">
+          <h1 class="heading underline hire__heading">HIRE NOW</h1>
+          <form>
+            <div class="form-group">
+              <span id="name" class="error"></span>
+              <input
+                type="text"
+                name="name"
+                class="form-input"
+                placeholder="Name"
+              />
+            </div>
+            <div class="form-group">
+              <span id="phone" class="error"></span>
+              <input
+                type="number"
+                name="phone"
+                class="form-input"
+                placeholder="Phone"
+              />
+            </div>
+            <div class="form-group">
+              <span id="email" class="error"></span>
+              <input
+                type="email"
+                name="email"
+                class="form-input"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="hire--location_wrapper">
+              <h2 class="heading hire__heading">LOCATION</h2>
+              <div class="form-group">
+                <span id="from" class="error"></span>
+                <input
+                  type="text"
+                  name="from"
+                  class="form-input"
+                  placeholder="From"
+                />
+              </div>
+              <div class="form-group">
+                <span id="to" class="error"></span>
+                <input
+                  type="text"
+                  name="to"
+                  class="form-input"
+                  placeholder="To"
+                />
+              </div>
+            </div>
+            <button
+              type="submit"
+              id="submitButton"
+              class="btn btn--primary hire__btn"
+            >
+              Get Quote
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="container grid">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            images/footer-banner/footer-banner.webp    1x,
+            images/footer-banner/footer-banner@2x.webp 2x
+          "
+        />
+        <source
+          type="image/png"
+          srcset="
+            images/footer-banner/footer-banner.png    1x,
+            images/footer-banner/footer-banner@2x.png 2x
+          "
+        />
+        <img
+          class="footer--image"
+          src="./images/footer-banner/footer-banner.png"
+          alt=""
+        />
+      </picture>
+      <div class="footer-content">
+        <ul class="list">
+          <li class="list__item footer_list__title">
+            Contact | Whatsapp :
+            <span class="footer_list__content">9884496415 | 8939293716</span>
+          </li>
+          <li class="list__item footer_list__title">
+            E-mail :
+            <span class="footer_list__content">jamarjothi1@gmail.com</span>
+          </li>
+          <li class="list__item footer_list__title social-list">
+            Social :
+            <a title="whatsapp_icon" href="#"
+              ><span class="icon whatsapp_icon"></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script type="module" src="./js/doSubmit.js"></script>
+  </body>
+</html>
