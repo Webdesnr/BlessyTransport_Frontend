@@ -192,6 +192,25 @@ button:disabled::before {
   content: none;
 }
 
+button:focus {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 30%);
+}
+
+.btn:focus.btn::after {
+  opacity: 0;
+  left: 0;
+}
+
+.btn:focus.btn::before {
+  opacity: 0;
+  right: 0;
+}
+
+.btn--primary:focus {
+  background-color: #898121;
+  color: #fff;
+}
+
 /* cards */
 .cards {
   column-gap: 3rem;
@@ -555,6 +574,8 @@ input[type="number"]::-webkit-inner-spin-button,
   margin: 3rem 0;
 }
 
+/* error box */
+
 .error {
   display: none;
   font-size: 1.4rem;
@@ -562,7 +583,8 @@ input[type="number"]::-webkit-inner-spin-button,
   color: orange;
   border: 2px solid orange;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .showError {
@@ -575,10 +597,54 @@ input[type="number"]::-webkit-inner-spin-button,
   font-size: 2rem;
 }
 
+/* status */
+.status {
+  /* display: inline-block; */
+  margin: 1rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+  border: solid 2px;
+}
+
+.success {
+  color: green;
+  border-color: green;
+}
+
+.warning {
+  color: orange;
+  border-color: orange;
+}
+
+/* loader */
+
+.loader {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: #898121;
+  animation: spin 0.75s ease infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 /* mobile-s */
 
 @media screen and (max-width: 320px) {
-  .hire--location_wrapper > .form-input {
+  .form-group {
+    width: 80%;
     font-size: 1.3rem;
   }
 }
@@ -586,7 +652,7 @@ input[type="number"]::-webkit-inner-spin-button,
 /* mobile-L */
 @media screen and (min-width: 426px) {
   .hire--location_wrapper {
-    width: 50%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }

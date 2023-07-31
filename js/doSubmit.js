@@ -11,14 +11,25 @@ const user = {
 
 const error = {};
 
-formData.addEventListener("submit", function (e) {
+formData.addEventListener("submit", async function (e) {
   e.preventDefault();
   for (const element of e.target.elements) {
     const { name, value } = element;
     if (name) handleError(name, value);
   }
   if (isError()) return;
-  console.log(user);
+
+  showLoader();
+
+  try {
+    const data = await callApi();
+    inputs.forEach((input) => (input.value = ""));
+    showStatus(data.name);
+  } catch (error) {
+    showStatus("");
+  } finally {
+    hideLoader();
+  }
 });
 
 inputs.forEach((input) => {
@@ -65,4 +76,38 @@ function showError(name) {
 function handleError(name, value) {
   validateUserInput(name, value);
   showError(name);
+}
+
+async function callApi() {
+  const res = await fetch("https://blessytransport.onrender.com/api/quotes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  });
+  return await res.json();
+}
+
+function showStatus(userName) {
+  const status = document.createElement("div");
+  status.className = "status";
+  status.innerText = userName
+    ? `Hi, ${userName} Receivied the Quote`
+    : "Sorry! , Try Again";
+  formData.append(status);
+  status.classList.add(userName ? "success" : "warning");
+  setTimeout(() => {
+    status.remove();
+  }, 3000);
+}
+
+function showLoader() {
+  const loader = document.createElement("span");
+  loader.className = "loader";
+  formData.append(loader);
+}
+
+function hideLoader() {
+  document.querySelector(".loader").remove();
 }
