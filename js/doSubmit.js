@@ -17,6 +17,7 @@ formData.addEventListener("submit", async function (e) {
     const { name, value } = element;
     if (name) handleError(name, value);
   }
+
   if (isError()) return;
 
   showLoader();
