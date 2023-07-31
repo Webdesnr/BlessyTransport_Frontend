@@ -79,7 +79,7 @@ function handleError(name, value) {
 }
 
 async function callApi() {
-  const res = await fetch("https://blessytransport.onrender.com/api/quotes", {
+  const res = await fetch("https://blessytransport.onrender.com/api/quote", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
